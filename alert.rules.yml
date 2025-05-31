@@ -1,0 +1,11 @@
+groups:
+  - name: flask_app_alerts
+    rules:
+      - alert: HighRequestRate
+        expr: sum(rate(app_requests_total[1m])) > 5
+        for: 30s
+        labels:
+          severity: warning
+        annotations:
+          summary: "High Request Rate Detected"
+          description: "The request rate is over 5 req/sec for more than 30s."
