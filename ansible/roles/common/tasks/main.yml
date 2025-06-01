@@ -1,0 +1,11 @@
+---
+- name: Update cache apt and install base pkgs
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+    name:
+      - git
+      - python3-pip
+    state: present
+  environment:
+    DEBIAN_FRONTEND: noninteractive

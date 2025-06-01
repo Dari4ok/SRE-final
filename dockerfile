@@ -13,4 +13,3 @@ COPY app/main.py ./main.py
 
 # Set the entry point
 CMD ["python", "main.py"]
-
