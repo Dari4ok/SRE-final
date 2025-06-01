@@ -1,2 +1,23 @@
+# Python
+__pycache__/
+*.pyc
 .env
-venv
+venv/
+*.log
+
+# Terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+*.tfvars
+
+# Ansible
+*.retry
+
+# Docker
+docker-compose.override.yml
+*.log
+
+# IDE
+.vscode/
+.idea/

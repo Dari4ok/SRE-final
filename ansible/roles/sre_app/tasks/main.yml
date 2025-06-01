@@ -54,10 +54,18 @@
     group: root
     mode: '0755'
 
-- name: Run docker-compose up -d in /opt/sre
-  shell: docker-compose up -d
+- name: Remove old containers
+  shell: |
+    docker-compose down --volumes --remove-orphans || true
   args:
     chdir: "/opt/sre"
+
+- name: New build
+  shell: |
+    docker-compose up -d --build --force-recreate
+  args:
+    chdir: "/opt/sre"
+
 
 - name: Wait for containers to start
   pause:
