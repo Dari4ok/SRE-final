@@ -140,7 +140,7 @@ This project demonstrates the application of Site Reliability Engineering (SRE) 
 
 ## Architecture
 
-```mermaid
+```
 flowchart LR
     subgraph Container_Network
         Flask[Flask App<br/>(web:5000)] 
@@ -1190,61 +1190,6 @@ PORT     STATE  SERVICE
 * **If Uptime < 99.5 % for the entire month**:
 
   * **Compensation**: 10 % discount on next invoice.
-
----
-
-## Team Roles & Collaboration
-
-* **Alice (SRE Lead)**
-
-  * Designed monitoring architecture (Prometheus, Grafana).
-  * Developed alert rules and Telegram Bot integration.
-  * Drafted SLIs/SLOs/SLA.
-
-* **Bob (DevOps Engineer)**
-
-  * Wrote Ansible playbooks & roles (`ansible/`).
-  * Maintained Ansible inventory and playbook orchestration.
-  * Troubleshot Docker networking and container startup issues.
-
-* **Carol (Cloud Engineer)**
-
-  * Developed Terraform modules (`terraform/`).
-  * Managed cloud credentials, provisioned VM(s) and security groups.
-  * Ensured IaC follows best practices (modular, DRY).
-
-* **Dave (CI/CD Specialist)**
-
-  * Configured GitHub Actions workflows (`ci/workflows/deploy.yml`).
-  * Integrated Pytest, Docker image builds, and Ansible deployment steps.
-  * Secured secrets in GitHub repository (`SSH_PRIVATE_KEY`, `TELEGRAM_TOKEN`, `TELEGRAM_CHAT_ID`).
-
-* **Eve (Security Analyst)**
-
-  * Conducted OS audit with Lynis.
-  * Performed container vulnerability scanning with Trivy.
-  * Configured UFW firewall and validated with Nmap.
-  * Compiled security audit report.
-
-* **Frank (Load Testing Engineer)**
-
-  * Performed ApacheBench load tests for 1–3 replicas.
-  * Collected metrics (RPS, p95 latency, CPU%) and authored capacity planning analysis.
-  * Developed scaling recommendations and auto-scaling triggers.
-
-* **Grace (SRE Tool Developer)**
-
-  * Wrote `cleanup_images.py` for daily removal of dangling images.
-  * Configured cron and systemd timer for automated execution.
-  * Tested script performance on various image datasets.
-
-**Collaboration Workflow**:
-
-* All code stored in a single monorepo with feature branches.
-* Pull Requests reviewed by at least two team members.
-* CI pipeline enforced tests and linting on every push to `main`.
-* Weekly sync meetings to coordinate Terraform, Ansible, and monitoring changes.
-* Shared Slack channel used for incident drills and alert testing.
 
 ---
 
